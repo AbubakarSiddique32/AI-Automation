@@ -2,17 +2,22 @@ import React from "react";
 
 const MainImages = () => {
   return (
-    <div>
-      <div className="right">
-        <div className="image1"></div>
-        <div className="image2"></div>
+    <div className="flex flex-wrap justify-center gap-5">
+      {/* Left Column */}
+      <div className="flex flex-col gap-3">
+        <div className="w-60 h-60 lg:w-56 lg:h-56  md:w-48 md:h-48 bg-gray-300 rounded-2xl" />
+        <div className="w-52 h-52 lg:w-44 lg:h-44 md:w-38 md:h-38 bg-gray-300 rounded-2xl" />
       </div>
-      <div className="center">
-        <div className="image3"></div>
-        <div className="image4"></div>
+
+      {/* Middle Column */}
+      <div className="flex flex-col gap-3">
+        <div className="w-52 h-52 lg:w-44 lg:h-44 md:w-38 md:h-38 bg-gray-300 rounded-2xl" />
+        <div className="w-44 h-44 lg:w-36 lg:h-36 md:w-28 md:h-28 bg-gray-300 rounded-2xl" />
       </div>
-      <div className="left">
-        <div className="image5"></div>
+
+      {/* Right Column */}
+      <div className="flex flex-col gap-3">
+        <div className="w-44 h-44 lg:w-36 lg:h-36 md:w-28 md:h-28 bg-gray-300 rounded-2xl mt-10 md:mt-20" />
       </div>
     </div>
   );
