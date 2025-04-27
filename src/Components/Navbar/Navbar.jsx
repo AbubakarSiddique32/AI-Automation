@@ -36,9 +36,9 @@ const Navbar = () => {
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <div className="space-y-1">
-              <span className="block w-8 h-1 bg-black"></span>
-              <span className="block w-8 h-1 bg-black"></span>
-              <span className="block w-8 h-1 bg-black"></span>
+              <span className="block w-8 h-1 bg-[#2A6B53]"></span>
+              <span className="block w-8 h-1 bg-[#2A6B53]"></span>
+              <span className="block w-8 h-1 bg-[#2A6B53]"></span>
             </div>
           </div>
         </div>
