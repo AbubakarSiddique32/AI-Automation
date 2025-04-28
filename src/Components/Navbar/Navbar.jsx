@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import navImage from "../../Images/nav-logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,20 +9,25 @@ const Navbar = () => {
     <div className=" w-full py-5 ">
       <nav className=" w-[90%] m-auto flex items-center justify-between ">
         <div className="left w-[25%] xl:w-[10%] lg:w-[13%] md:w-[15%] sm:w-[20%] ">
-          <img src={navImage} alt="" className="w-full object-cover" />
+          <Link to="/">
+            <img src={navImage} alt="" className="w-full object-cover" />
+          </Link>
         </div>
 
         <div className="right flex items-center gap-10">
           <ul className="  gap-4 font-bold cursor-pointer hidden sm:block sm:flex">
             <li className="hover:scale-105">
-              <a href="" className="text-[#20262A] text-[18px] font-[500] ">
+              <Link
+                to="/about"
+                className="text-[#20262A] text-[18px] font-[500] "
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li className="hover:scale-105">
-              <a href="" className="text-[#20262A]  text-[18px] font-[500] ">
+              <Link to="" className="text-[#20262A]  text-[18px] font-[500] ">
                 Pricing
-              </a>
+              </Link>
             </li>
           </ul>
 
