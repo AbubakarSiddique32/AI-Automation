@@ -25,7 +25,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="hover:scale-105">
-              <Link to="" className="text-[#20262A]  text-[18px] font-[500] ">
+              <Link
+                to="/pricing"
+                className="text-[#20262A]  text-[18px] font-[500] "
+              >
                 Pricing
               </Link>
             </li>
@@ -51,12 +54,12 @@ const Navbar = () => {
       </nav>
       {menuOpen && (
         <div className="absolute w-1/2 top-[80px] right-5 bg-white shadow-lg rounded-lg p-5 flex flex-col items-start gap-4 md:hidden">
-          <a href="#" className="text-[#20262A] text-[18px] font-[500]">
+          <Link to="/about" className="text-[#20262A] text-[18px] font-[500]">
             About
-          </a>
-          <a href="#" className="text-[#20262A] text-[18px] font-[500]">
+          </Link>
+          <Link to="/pricing" className="text-[#20262A] text-[18px] font-[500]">
             Pricing
-          </a>
+          </Link>
           <button className="font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[30px] rounded-full border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105">
             Login
           </button>

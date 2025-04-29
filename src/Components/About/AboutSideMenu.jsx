@@ -10,7 +10,7 @@ const AboutSideMenu = () => {
   ];
   return (
     <div>
-      <ul className=" flex gap-3 flex-col fixed">
+      <ul className=" flex lg:gap-3 lg:flex-col lg:fixed justify-center gap-8 flex-wrap">
         {links.map((link, index) => {
           return (
             <li key={index}>

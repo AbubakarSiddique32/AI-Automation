@@ -4,11 +4,11 @@ import AboutData from "./AboutData";
 
 const About = () => {
   return (
-    <div className=" flex py-[30px] px-[50px]">
-      <div className=" w-[20%] ">
+    <div className=" flex py-[30px] lg:px-[50px] lg:flex-row flex-col px-[10px] ">
+      <div className=" lg:w-[20%] w-[100%] p-[10px] ">
         <AboutSideMenu />
       </div>
-      <div className=" w-[80%] flex flex-col">
+      <div className=" lg:w-[80%] w-[100%] flex flex-col">
         <AboutData />
       </div>
     </div>
