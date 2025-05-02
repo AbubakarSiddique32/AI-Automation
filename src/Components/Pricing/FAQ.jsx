@@ -38,13 +38,13 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-[90%] m-auto py-[50px] flex  ">
-      <div className="faq-left w-[40%]">
-        <h1 className=" font-outfit text-[48px] font-[400] text-[#000000]">
+    <div className="w-[90%] m-auto py-[50px] pb-[60px] flex md:flex-row flex-col  ">
+      <div className="faq-left md:w-[40%] w-[100%]">
+        <h1 className=" font-outfit lg:text-[48px] lg:font-[400] font-[600] md:text-[28px] md:text-left text-center md:mb-0 mb-5 text-[24px] text-[#000000]">
           Frequently Asked Questions
         </h1>
       </div>
-      <div className="faq-right w-[60%]">
+      <div className="faq-right md:w-[60%] w-[100%]">
         <div className="w-full mx-auto ">
           {faqData.map((item, index) => (
             <div key={index} className="border-t border-black">

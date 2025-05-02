@@ -97,7 +97,7 @@ const ComparePlans = () => {
                   <div className="text-xl font-bold">
                     {plan.price.includes("$") ? (
                       <>
-                        <span className="text-[28px] font-[400] text-[#000000]  font-outfit">
+                        <span className="lg:text-[28px] md:text-[24px] text-[20px] font-[400] text-[#000000]  font-outfit">
                           {plan.price}
                         </span>
                         <span className="text-[16px] font-[300] text-[#2A6B53] font-outfit">
@@ -105,13 +105,13 @@ const ComparePlans = () => {
                         </span>
                       </>
                     ) : (
-                      <span className="text-[28px] font-[400] text-[#000000]  font-outfit">
+                      <span className="lg:text-[28px] md:text-[24px] text-[15px] font-[400] text-[#000000]  font-outfit">
                         {plan.price}
                       </span>
                     )}
                   </div>
                   <button
-                    className={`mt-2 px-4 py-2 rounded text-sm w-full ${
+                    className={`mt-2 md:px-4 md:py-2 px-2 py-1 rounded lg:text-sm md:text-[12px] text-[9px]  w-full ${
                       plan.highlight
                         ? "bg-[#2A6B53] text-[#FAFFFE]"
                         : "border border-black"

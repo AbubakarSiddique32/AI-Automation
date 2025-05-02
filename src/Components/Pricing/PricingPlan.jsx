@@ -50,18 +50,18 @@ const PricingPlan = () => {
     <div className="pricing-plan py-[30px] pb-[50px] ">
       <div className="pricing-plan-body ">
         <div className="pricing-heading text-center p-[20px] pt-[50px]">
-          <h1 className=" text-[60px] font-[500] font-poppins text-black mb-[5px]">
+          <h1 className=" md:text-[60px] text-[30px] font-[500] font-poppins text-black mb-[5px]">
             Flexible pricing plans
           </h1>
-          <h4 className="text-[24px] font-[300] font-poppins">
+          <h4 className="md:text-[24px] text-[20px] font-[300] font-poppins">
             Choose the best plan for your business needs.
           </h4>
         </div>
-        <div className="buying-plans w-[80%] m-auto flex justify-between pt-[30px]">
+        <div className="buying-plans xl:w-[80%] lg:w-[90%] w-[95%] md:flex-row flex-col m-auto flex justify-between pt-[30px]">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`single-plan w-[30%] p-[24px] rounded-[16px] border transition-all duration-300 ${
+              className={`single-plan md:w-[30%] w-[90%] m-auto md:mb-0 mb-4 p-[24px] rounded-[16px] border transition-all duration-300 ${
                 selectedPlan === index
                   ? "bg-[#19332D0F] border-[#2A6B53] text-[#2A6B53]"
                   : "border-[#000000] text-black"

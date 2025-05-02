@@ -35,9 +35,12 @@ const Navbar = () => {
           </ul>
 
           <div className="button max-[650px]:hidden">
-            <button className=" font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[40px] rounded-[100px] border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105">
+            <Link
+              to="/login"
+              className=" font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[40px] rounded-[100px] border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105"
+            >
               Login
-            </button>
+            </Link>
           </div>
 
           <div
@@ -60,9 +63,12 @@ const Navbar = () => {
           <Link to="/pricing" className="text-[#20262A] text-[18px] font-[500]">
             Pricing
           </Link>
-          <button className="font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[30px] rounded-full border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105">
+          <Link
+            to="/login"
+            className="font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[30px] rounded-full border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105"
+          >
             Login
-          </button>
+          </Link>
         </div>
       )}
     </div>
