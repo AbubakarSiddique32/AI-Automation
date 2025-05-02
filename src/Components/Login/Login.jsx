@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Dashboard from "../Dashboard/Dashboard";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     const temp = JSON.parse(localStorage.getItem("user-data"));
     if (temp.email === detail.email && temp.password === detail.password) {
-      navigate("/about");
+      navigate("/dashboard");
     } else {
       alert("Invalid Information");
     }

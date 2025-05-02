@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="button max-[650px]:hidden">
             <Link
               to="/login"
-              className=" font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[40px] rounded-[100px] border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105"
+              className=" font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[40px] rounded-[100px]  cursor-pointer hover:bg-green-950 hover:scale-105"
             >
               Login
             </Link>
