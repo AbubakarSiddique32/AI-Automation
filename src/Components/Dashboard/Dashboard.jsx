@@ -5,14 +5,16 @@ import SideMenu from "./SideMenu/SideMenu";
 
 const Dashboard = () => {
   return (
-    <div className=" flex">
+    <>
       <DashNavbar />
-      <SideMenu />
+      <div className=" flex" id="/dashboard">
+        <SideMenu />
 
-      <div className=" w-[75%]">
-        <ContactUI />
+        <div className=" w-[75%]">
+          <ContactUI />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
