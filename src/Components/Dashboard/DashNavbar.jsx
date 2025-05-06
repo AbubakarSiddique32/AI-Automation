@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import navImage from "../../Images/nav-logo.png";
 import { Link } from "react-router-dom";
-import { CiSearch } from "react-icons/ci";
+import { IoSearchOutline } from "react-icons/io5";
 import { IoGridOutline } from "react-icons/io5";
 const DashNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,19 +25,19 @@ const DashNavbar = () => {
           </Link>
         </div>
 
-        <div className="right">
+        <div className="right flex gap-7 items-center">
           <div className="search">
-            <button>
-              <CiSearch />
+            <button className=" ">
+              <IoSearchOutline className="w-[24px] h-[24px] object-cover" />
             </button>
           </div>
-          <div className="grid">
-            <button>
-              <IoGridOutline />
+          <div className="grid ">
+            <button className="">
+              <IoGridOutline className="w-[24px] h-[24px]" />
             </button>
           </div>
           <div className="profile">
-            <div className="profile-img">
+            <div className="profile-img w-[48px] h-[48px] bg-[#9A9494]  rounded-full border  border-[#00000000]">
               <img src="" alt="" className="w-full" />
             </div>
           </div>
