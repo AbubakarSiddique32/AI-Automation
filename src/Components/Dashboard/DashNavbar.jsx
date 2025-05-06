@@ -4,6 +4,26 @@ import navImage from "../../Images/nav-logo.png";
 import { Link } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoGridOutline } from "react-icons/io5";
+
+const Datas = [
+  {
+    title: "Account",
+    items: ["Profile Information", "Change Password"],
+  },
+  {
+    title: "Notifications",
+    items: ["Email Alerts", "Push Notifications"],
+  },
+  {
+    title: "Privacy",
+    items: ["Data Sharing Preferences", "Activity Status"],
+  },
+  {
+    title: "Campaign",
+    items: ["API Hierarchy"],
+  },
+];
+
 const DashNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
@@ -46,18 +66,25 @@ const DashNavbar = () => {
 
       {menuOpen && (
         <div className="absolute w-1/2 top-[80px] left-5 bg-white shadow-lg rounded-lg p-5 flex flex-col items-start gap-4 lg:hidden">
-          <Link to="/about" className="text-[#20262A] text-[18px] font-[500]">
-            About
-          </Link>
-          <Link to="/pricing" className="text-[#20262A] text-[18px] font-[500]">
-            Pricing
-          </Link>
-          <Link
-            to="/login"
-            className="font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[30px] rounded-full border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105"
-          >
-            Login
-          </Link>
+          {Datas.map((data, index) => (
+            <div className="side-account" key={index}>
+              <h4 className="text-[#1B2128] font-[700] font-outfit text-[20px] mb-[20px] mt-[30px]">
+                {data.title}
+              </h4>
+              <ul className="flex flex-col gap-1">
+                {data.items.map((item, idx) => (
+                  <li key={idx}>
+                    <Link
+                      to=""
+                      className="text-[#000000] font-[500] font-outfit text-[15px] hover:underline"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       )}
     </div>
