@@ -7,6 +7,7 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         outfit: ["Outfit", "sans - serif"],
+        public: ["Public Sans", "sans - serif"],
       },
     },
   },

@@ -56,19 +56,30 @@ const Navbar = () => {
         </div>
       </nav>
       {menuOpen && (
-        <div className="absolute w-1/2 top-[80px] right-5 bg-white shadow-lg rounded-lg p-5 flex flex-col items-start gap-4 md:hidden">
-          <Link to="/about" className="text-[#20262A] text-[18px] font-[500]">
-            About
-          </Link>
-          <Link to="/pricing" className="text-[#20262A] text-[18px] font-[500]">
-            Pricing
-          </Link>
-          <Link
-            to="/login"
-            className="font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[30px] rounded-full border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105"
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-20"
+          onClick={() => setMenuOpen(false)}
+        >
+          <div
+            className="absolute w-[90%] max-h-[80vh] overflow-y-auto no-scrollbar top-[80px] right-5 bg-white shadow-lg rounded-lg p-5 flex flex-col items-center gap-4 md:hidden "
+            onClick={(e) => e.stopPropagation()}
           >
-            Login
-          </Link>
+            <Link to="/about" className="text-[#20262A] text-[18px] font-[500]">
+              About
+            </Link>
+            <Link
+              to="/pricing"
+              className="text-[#20262A] text-[18px] font-[500]"
+            >
+              Pricing
+            </Link>
+            <Link
+              to="/login"
+              className=" flex w-full items-center justify-center font-poppins font-[500] text-[18px] bg-[#2A6B53] text-white py-[10px] px-[30px] rounded-full border-2 border-white cursor-pointer hover:bg-green-950 hover:scale-105"
+            >
+              Login
+            </Link>
+          </div>
         </div>
       )}
     </div>
