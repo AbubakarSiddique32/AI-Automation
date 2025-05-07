@@ -1,9 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContactUI = () => {
+  const navigate = useNavigate();
+
+  const handleNext = (e) => {
+    e.preventDefault();
+    navigate("/dashboard/companydetails");
+  };
+
   return (
-    <section className=" w-full lg:p-[100px] sm:p-[30px] p-[16px] ">
+    <section className="  w-full lg:p-[40px] sm:p-[30px] p-[16px] ">
       <form className="xl:w-[70%]  md:w-[90%] w-full space-y-5 p-6 rounded-md m-auto ">
         <h2 className="text-[20px] font-poppins font-[700] text-[#281D1B]">
           Contact & User Information
@@ -51,9 +58,9 @@ const ContactUI = () => {
           />
         </div>
 
-        <div className="flex gap-4">
-          <div className="w-1/2">
-            <label className="block sm:text-[13px] text-[11px] font-public font-medium text-[#281D1B]">
+        <div className="flex gap-4 sm:flex-row flex-col">
+          <div className="sm:w-1/2 w-full">
+            <label className="block text-[13px]  font-public font-medium text-[#281D1B]">
               Enter Password
             </label>
             <input
@@ -62,8 +69,8 @@ const ContactUI = () => {
               className="w-full px-4 py-2 border text-[15px] font-[400] font-public text-[#2E181466] border-gray-300 rounded-md bg-[#fdf9f8] focus:outline-none"
             />
           </div>
-          <div className="w-1/2">
-            <label className="block sm:text-[13px] text-[11px] font-public font-medium text-[#281D1B]">
+          <div className="sm:w-1/2 w-full">
+            <label className="block text-[13px] font-public font-medium text-[#281D1B]">
               Re-Enter Password
             </label>
             <input
@@ -84,6 +91,7 @@ const ContactUI = () => {
           </Link>
           <button
             type="submit"
+            onClick={handleNext}
             className="bg-[#276951] font-public text-[15px]  text-white px-6 py-2 rounded-[16px] hover:bg-[#14362a]"
           >
             Next
