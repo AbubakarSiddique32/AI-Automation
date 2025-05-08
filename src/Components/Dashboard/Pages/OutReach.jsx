@@ -16,8 +16,8 @@ const OutReach = () => {
   };
 
   return (
-    <section className="w-full lg:p-[100px] sm:p-[30px] p-[16px]">
-      <form className="xl:w-[70%] md:w-[90%] w-full space-y-5 p-6 rounded-md m-auto">
+    <section className="w-full lg:p-[40px] sm:p-[30px] p-[16px]">
+      <form className="xl:w-[70%]  md:w-[90%] w-full space-y-5 p-6 rounded-md m-auto">
         <h2 className="text-[20px] font-poppins font-[700] text-[#281D1B]">
           Outreach & Messaging Preferences
         </h2>
@@ -35,23 +35,26 @@ const OutReach = () => {
             <option>
               Professional, Friendly, Casual, Industry-Specific, Other
             </option>
+            <option>Professional</option>
+            <option>Friendly, Casual, Industry-Specific, Other</option>
             {/* Add other options here */}
           </select>
         </div>
 
         {/* File Upload */}
+        {/* File Upload */}
         <div className="space-y-2">
           <label className="block text-[13px] font-public font-medium text-[#281D1B]">
             Upload Existing Email & LinkedIn Templates
           </label>
-          <div className="border-dashed border-2 border-[#D2C6B2] rounded-md p-4 w-full">
+          <div className="border-dashed border-2 border-[#D2C6B2] rounded-md p-4 w-full relative">
             <div className="flex items-center justify-center">
               <input
                 type="file"
                 onChange={handleFileChange}
                 className="absolute inset-0 opacity-0 cursor-pointer"
               />
-              <div className="flex flex-col items-center text-center text-[#9A9A9A]">
+              <div className="flex flex-col items-center text-center text-[#9A9A9A] pointer-events-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-8 h-8 mb-2"
@@ -104,7 +107,7 @@ const OutReach = () => {
             <span className="text-xs text-[#6B6B6B] mr-2">
               Allow AI to adjust tone and content dynamically
             </span>
-            <label className="relative inline-block w-10 h-6">
+            <label className=" absolute inline-block w-10 h-6">
               <input
                 type="checkbox"
                 checked={aiPersonalization}
