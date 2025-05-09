@@ -22,8 +22,8 @@ const CompanyDetails = () => {
   };
 
   return (
-    <section className="w-full lg:p-[40px] sm:p-[30px] p-[1px]">
-      <form className="xl:w-[70%] md:w-[90%] w-full space-y-5 p-6 rounded-md m-auto">
+    <section className="w-full lg:p-[40px] sm:p-[30px] p-[16px]">
+      <form className="xl:w-[70%]  md:w-[90%] w-full space-y-5 p-6 rounded-md m-auto">
         <h2 className="text-[20px] font-poppins font-[700] text-[#281D1B]">
           Company Details
         </h2>

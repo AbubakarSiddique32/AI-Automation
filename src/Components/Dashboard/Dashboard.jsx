@@ -6,6 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import CompanyDetails from "./Pages/CompanyDetails";
 import OutReach from "./Pages/OutReach";
 import Lead from "./Pages/Lead";
+import ThirdPartyIntegrations from "./Pages/ThirdParty.jsx";
+
 const Dashboard = () => {
   return (
     <>
@@ -20,6 +22,7 @@ const Dashboard = () => {
             <Route path="/companydetails" element={<CompanyDetails />} />
             <Route path="/outreach" element={<OutReach />} />
             <Route path="/lead" element={<Lead />} />
+            <Route path="/thirdparty" element={<ThirdPartyIntegrations />} />
           </Routes>
         </div>
       </div>
