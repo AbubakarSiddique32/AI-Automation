@@ -5,6 +5,7 @@ import SideMenu from "./SideMenu/SideMenu";
 import { Route, Routes } from "react-router-dom";
 import CompanyDetails from "./Pages/CompanyDetails";
 import OutReach from "./Pages/OutReach";
+import Lead from "./Pages/Lead";
 const Dashboard = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Dashboard = () => {
             <Route path="/" element={<ContactUI />} />
             <Route path="/companydetails" element={<CompanyDetails />} />
             <Route path="/outreach" element={<OutReach />} />
+            <Route path="/lead" element={<Lead />} />
           </Routes>
         </div>
       </div>

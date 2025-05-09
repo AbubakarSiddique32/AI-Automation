@@ -9,11 +9,11 @@ const CompanyDetails = () => {
   const [brochure, setBrochure] = useState(null);
   const [customerProfile, setCustomerProfile] = useState(null);
 
-  const navigate = useNavigate(); // Make sure useNavigate is used here
-
   const handleFileChange = (e, setter) => {
     setter(e.target.files[0]);
   };
+
+  const navigate = useNavigate(); // Make sure useNavigate is used here
 
   const handleNext = (e) => {
     e.preventDefault();

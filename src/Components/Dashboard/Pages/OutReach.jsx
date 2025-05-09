@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const OutReach = () => {
   const [tone, setTone] = useState("");
   const [template, setTemplate] = useState(null);
   const [preferredChannels, setPreferredChannels] = useState("");
   const [aiPersonalization, setAiPersonalization] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleNext = (e) => {
+    e.preventDefault();
+    // Navigate to the /outreach route after submitting
+    navigate("/dashboard/lead");
+  };
 
   const handleFileChange = (e) => {
     setTemplate(e.target.files[0]);
@@ -36,11 +44,7 @@ const OutReach = () => {
               Professional, Friendly, Casual, Industry-Specific, Other
             </option>
             <option>Professional</option>
-            <option>Friendly, Casual, Industry-Specific, Other</option>
-            <option>Professional</option>
-            <option>Friendly, Casual, Industry-Specific, Other</option>
-            <option>Professional</option>
-            <option>Friendly, Casual, Industry-Specific, Other</option>
+
             {/* Add other options here */}
           </select>
         </div>
@@ -103,22 +107,25 @@ const OutReach = () => {
         </div>
 
         {/* AI Message Personalization */}
-        <div className="flex items-center space-x-3 mt-4">
-          <label className="text-[13px] font-public font-medium text-[#281D1B]">
-            AI Message Personalization
-          </label>
-          <div className="flex items-center">
-            <span className="text-xs text-[#6B6B6B] mr-2">
-              Allow AI to adjust tone and content dynamically
-            </span>
-            <label className=" absolute inline-block w-10 h-6">
+        <div className="space-y-2 mt-4">
+          <h4>AI Message Personalization</h4>
+
+          <div className="flex items-center justify-between">
+            <h2 className="block text-[13px] font-public font-medium text-[#281D1B]">
+              Allow AI to adjust tone and content dynamically <br />
+              <span className="text-xs text-[#6B6B6B]">
+                Enable AI to tailor messages based on context
+              </span>
+            </h2>
+
+            <label className="relative inline-block w-10 h-6">
               <input
                 type="checkbox"
                 checked={aiPersonalization}
                 onChange={handleToggle}
                 className="opacity-0 w-0 h-0"
               />
-              <span className="slider round"></span>
+              <span className="slider"></span>
             </label>
           </div>
         </div>
@@ -133,6 +140,7 @@ const OutReach = () => {
           </Link>
           <button
             type="button"
+            onClick={handleNext}
             className="bg-[#276951] font-public text-[15px] text-white px-6 py-2 rounded-[16px] hover:bg-[#14362a]"
           >
             Next

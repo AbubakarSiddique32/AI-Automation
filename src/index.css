@@ -12,3 +12,34 @@
     @apply font-poppins bg-white text-[#20262A] m-0 p-0 box-border;
   }
 }
+
+/* Toggle Switch Styles */
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #e5e5e5;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ded6d2;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
