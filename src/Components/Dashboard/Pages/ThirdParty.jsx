@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import profile from "../../../Images/profile.png";
 
 const ThirdPartyIntegrations = () => {
   const [name, setName] = useState("");
@@ -25,67 +26,92 @@ const ThirdPartyIntegrations = () => {
   return (
     <section className="w-full lg:p-[40px] sm:p-[30px] p-[16px]">
       <form className="xl:w-[70%] md:w-[90%] w-full space-y-6 p-6 rounded-md m-auto">
-        <h2 className="text-[20px] font-poppins font-bold text-[#281D1B]">
+        <h2 className="text-[20px] font-poppins font-[700] text-[#281D1B]">
           Third-Party Integrations
         </h2>
 
         {/* User Profile */}
         <div className="flex items-center gap-4">
-          <img
-            src="https://via.placeholder.com/48x48.png?text=👤"
-            alt="user"
-            className="w-12 h-12 rounded-full"
-          />
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md bg-[#fdf9f8] text-sm border-gray-300 focus:outline-none"
-          />
+          <div className="user-image w-[10%]">
+            <img
+              src={profile}
+              alt="user"
+              className="w-12 h-12 rounded-full bg-[#00000000]"
+            />
+          </div>
+          <div className="user-data w-[85%]">
+            <label className=" font-public font-[500] text-[13px] text-[#281D1B]">
+              User Profile
+            </label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-4 py-2 border rounded-[16px] bg-[#fdf9f8] text-[15px] font-public text-[#2E191466] border-gray-300 focus:outline-none"
+            />
+          </div>
         </div>
 
         {/* Integration Toggles */}
-        <div className="space-y-4">
-          <h3 className="font-semibold text-[15px] text-[#281D1B]">
+        <div className="space-y-4 gap-6 flex flex-col">
+          <h3 className="font-[700] text-[20px] font-public text-[#281D1B]">
             Integration Status
           </h3>
 
           {[
-            { label: "Zoho CRM", state: zohoEnabled, setState: setZohoEnabled },
+            {
+              label: "Zoho CRM",
+              text: "API Key Input Field & Status",
+              state: zohoEnabled,
+              setState: setZohoEnabled,
+            },
             {
               label: "Klaviyo",
+              text: "API Key Input Field & Status",
               state: klaviyoEnabled,
               setState: setKlaviyoEnabled,
             },
             {
               label: "Kixie",
+              text: "API Key Input Field & Status",
               state: kixieEnabled,
               setState: setKixieEnabled,
             },
-          ].map(({ label, state, setState }) => (
+          ].map(({ label, text, state, setState }) => (
             <div
               key={label}
               className="flex items-center justify-between text-sm"
             >
-              <span className="font-medium">{label}</span>
-              <label className="relative inline-block w-10 h-6">
-                <input
-                  type="checkbox"
-                  checked={state}
-                  onChange={() => setState(!state)}
-                  className="opacity-0 w-0 h-0"
-                />
-                <span className={toggleClass(state)}>
-                  <span className={circleClass(state)}></span>
+              <div className="name-tag">
+                <span className="font-[700] font-public text-[17px] text-[#281D1B] ">
+                  {label}
                 </span>
-              </label>
+                <p className="font-[400] font-public text-[15px] text-[#2E19149E] mt-[2px]">
+                  {text}
+                </p>
+              </div>
+              <div className="on-off">
+                <label className="relative inline-block w-10 h-6">
+                  <input
+                    type="checkbox"
+                    checked={state}
+                    onChange={() => setState(!state)}
+                    className="opacity-0 w-0 h-0"
+                  />
+                  <span className={toggleClass(state)}>
+                    <span className={circleClass(state)}></span>
+                  </span>
+                </label>
+              </div>
             </div>
           ))}
 
           {/* Auto Sync */}
           <div className="flex items-center justify-between text-sm font-semibold">
-            <span>Automatically sync new leads with CRM</span>
+            <span className="font-[700] font-public text-[17px] text-[#281D1B]">
+              Automatically sync new leads with CRM
+            </span>
             <label className="relative inline-block w-10 h-6">
               <input
                 type="checkbox"
@@ -101,8 +127,8 @@ const ThirdPartyIntegrations = () => {
         </div>
 
         {/* API Key Inputs */}
-        <div className="space-y-4">
-          <h3 className="font-semibold text-[15px] text-[#281D1B]">
+        <div className="space-y-4 py-3 pt-12">
+          <h3 className="font-[700] font-public text-[20px] text-[#281D1B]">
             API Key Inputs
           </h3>
 
@@ -125,17 +151,28 @@ const ThirdPartyIntegrations = () => {
           ].map(({ label, value, onChange }, idx) => (
             <div key={idx} className="md:flex items-center gap-4">
               <div className="flex-1">
-                <label className="block text-sm mb-1">{label}</label>
+                <label className="block text-[13px] font-public font-[500] text-[#281D1B] ">
+                  {label}
+                </label>
                 <input
                   type="text"
                   value={value}
                   onChange={(e) => onChange(e.target.value)}
                   placeholder={`Enter ${label}`}
-                  className="w-full px-4 py-2 border text-sm border-gray-300 rounded-md bg-[#fdf9f8] focus:outline-none"
+                  className="w-full px-4 py-2 border text-[#2E191466] text-[15px] font-public font-[400] border-gray-300 rounded-[8px] bg-[#fdf9f8] focus:outline-none"
                 />
               </div>
-              <div className="text-sm text-[#6B6B6B] mt-2 md:mt-7">
-                Status <br /> Connected / Not Connected
+              <div className="text-sm text-[#6B6B6B]">
+                <label className=" text-[13px] font-public font-[500] text-[#281D1B]">
+                  Status
+                </label>
+                <input
+                  type="text"
+                  placeholder="Connected / Not Connected"
+                  value={value}
+                  onChange={(e) => onChange(e.target.value)}
+                  className="w-full px-4 py-2 border text-[#2E191466] text-[15px] font-public font-[400] border-gray-300 rounded-[8px] bg-[#fdf9f8] focus:outline-none"
+                />
               </div>
             </div>
           ))}
