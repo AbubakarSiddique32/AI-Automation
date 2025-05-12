@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import profile from "../../../Images/profile.png";
 
 const ThirdPartyIntegrations = () => {
@@ -22,6 +22,14 @@ const ThirdPartyIntegrations = () => {
     `${
       enabled ? "translate-x-5" : "translate-x-0"
     } absolute left-[2px] top-[2px] w-5 h-5 bg-black rounded-full transition`;
+
+  const navigate = useNavigate();
+
+  const handleNext = (e) => {
+    e.preventDefault();
+    // Navigate to the /outreach route after submitting
+    navigate("/dashboard/finalconfirmation");
+  };
 
   return (
     <section className="w-full lg:p-[40px] sm:p-[30px] p-[16px]">
@@ -188,6 +196,7 @@ const ThirdPartyIntegrations = () => {
           </Link>
           <button
             type="button"
+            onClick={handleNext}
             className="bg-[#276951] text-white text-sm px-6 py-2 rounded-[16px] hover:bg-[#14362a]"
           >
             Next
